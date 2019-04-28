@@ -1,21 +1,19 @@
-import { createStackNavigator, createAppContainer } from "react-navigation";
-import LoginScreen from "../Containers/Login/LoginScreen";
+import { createSwitchNavigator, createAppContainer } from "react-navigation";
+import AuthStackNavigator from "./AuthStackNavigator";
 
 import styles from "./Styles/NavigationStyles";
 
 // Manifest of possible screens
-const PrimaryNav = createStackNavigator(
+const switchNavigator = createSwitchNavigator(
   {
-    Login: { screen: LoginScreen }
+    AuthStackNavigator
   },
   {
     // Default config for all screens
     headerMode: "none",
-    initialRouteName: "Login",
-    navigationOptions: {
-      headerStyle: styles.header
-    }
+    initialRouteName: "AuthStackNavigator",
+   
   }
 );
 
-export default createAppContainer(PrimaryNav);
+export default createAppContainer(switchNavigator);
