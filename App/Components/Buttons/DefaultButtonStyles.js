@@ -14,7 +14,7 @@ export default StyleSheet.create({
     borderColor: Colors.khaki
   },
   label: {
-    ...Fonts.style.normal
+    ...Fonts.style.normalBold
   },
   transparentLabel: {
     color: Colors.khaki

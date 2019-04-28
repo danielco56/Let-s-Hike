@@ -1,30 +1,25 @@
 import React, { Component } from "react";
 import { View, Image, SafeAreaView, Button } from "react-native";
-import styles from "./Styles/LoginScreenStyles";
+import styles from "./Styles/RegisterScreenStyle";
 import { Images, Colors } from "../../Themes";
 import CustomInput from "../../Components/Input/CustomInput";
 import DefaultButton from "../../Components/Buttons/DefaultButton";
 
-export default class LoginScreen extends Component {
+export default class RegisterScreen extends Component {
   render() {
     return (
       <SafeAreaView style={styles.container}>
-        <Image source={Images.logo} style={styles.logo} />
         <View style={styles.inputContainer}>
           <CustomInput placeholder={"Email"} secureTextEntry={false} />
+          <CustomInput placeholder={"First Name"} secureTextEntry={true} />
+          <CustomInput placeholder={"Last Name"} secureTextEntry={true} />
           <CustomInput placeholder={"Password"} secureTextEntry={true} />
+          <CustomInput placeholder={"Repeat Password"} secureTextEntry={true} />
         </View>
         <View style={styles.registerButtonStyle}>
-          <Button
-            title={"Don't have an account?"}
-            color={Colors.khaki}
-            onPress={() => this.props.navigation.navigate("RegisterScreen")}
-          />
-        </View>
-        <View style={styles.loginButtonStyle}>
           <DefaultButton
-            title={"Log In"}
-            onPress={() => console.log("log")}
+            title={"Register"}
+            onPress={() => console.log("Register")}
           />
         </View>
       </SafeAreaView>
